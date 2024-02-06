@@ -2,14 +2,18 @@
 const express = require('express')
 const http = require('http')
 const socketIO = require('socket.io')
+const cors = require('cors')
 
 const port = 4001;                        // localhost port
 const app = express();                    // invoking app instance
 const server = http.createServer(app);    // server instance
 const io = socketIO(server);              // creating server socket using server instance
 
+// use CORS
+app.use(cors());
+
 // server listens to given port
-server.listen(port, () => {
+server.listen(port, "0.0.0.0", () => {
   console.log(`http server listening on port ${port}`)
 });
 
