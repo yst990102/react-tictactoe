@@ -127,3 +127,9 @@ const taunts = ['what up bish',
                 'can i play with someone else',
                 'u should feel bad',
                 'stop crying'];
+
+
+// 添加一个GET路由，用于显示页面内容
+app.get('/', (req, res) => {
+  res.send('这里是react-tictactoe的后端');
+});
